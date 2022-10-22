@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Gold Price Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+  
+ 
+ <div class="login">
+  <div class = 'content'>
+    <div class = "heading">
+      <h1>Gold Price Prediction</h1>
+    </div>
+	
+  
+     
+    <form action="{{ url_for('predict') }}" method="post">
+      <div class ='InsideContent'>
+
+          <div class = 'block'>
+                <label>Silver Price:</label>
+                <input type="text" name="Silver_Price_gram" placeholder="Silver Price Per Gram" size="80" height="50" required="required" />
+          </div>
+          <div class = 'block'>
+                <label>USD Rate:</label>
+                <input type="text" name="USD_rate" placeholder="Enter USD Rate" size="80" required="required" />
+          </div>
+          <div class = 'block'>
+                <label>Crude oil:</label>
+        		    <input type="text" name="Crude_oil" placeholder="Crude oil Barrel Price" size="80" required="required" />
+          </div>
+
+          
+          
+          
+
+            <button type="submit" id="btn1">Predict Gold price</button>
+    </form>
+  </div>
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+ 
+ <div class = "prediction">
+  <h1>{{ prediction_text }}</h1>
+</div>
+
+
+</body>
+</html>
